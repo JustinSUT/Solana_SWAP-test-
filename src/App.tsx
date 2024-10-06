@@ -97,8 +97,8 @@ async function swapSOLToUSDC(solAmount: number): Promise<number> {
 async function createAddLiquidityTransaction(solAmount: number, usdcAmount: number) {
     const transaction = new Transaction();
     // Create instructions for adding liquidity here
-
-    
+    console.log(`${solAmount}`);
+    console.log(`${usdcAmount}`);
     return transaction;
 }
 

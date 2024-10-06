@@ -6,10 +6,15 @@ import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 
 import '@solana/wallet-adapter-react-ui/styles.css';
 
+// Define props interface to include 'children'
+interface WalletContextProviderProps {
+  children: React.ReactNode; // children can be any valid React node
+}
+
 // Solana devnet RPC endpoint
 const SOLANA_RPC_ENDPOINT = 'https://api.devnet.solana.com';
 
-const WalletContextProvider: React.FC = ({ children }) => {
+const WalletContextProvider: React.FC<WalletContextProviderProps> = ({ children }) => {
     const wallets = [new PhantomWalletAdapter()];
     return (
         <WalletProvider wallets={wallets} autoConnect>
